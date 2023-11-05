@@ -1,0 +1,55 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    color: rebeccapurple;
+    font-weight: bold;
+    font-family: cursive;
+}
+
+.custom-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+    .custom-layout .left-column {
+        flex: 1;
+
+        padding: 10px;
+    }
+
+    .custom-layout .main-content {
+        flex: 5;
+        padding: 10px;
+    }
+
+.brown-rectangle {
+    background-color: lightgoldenrodyellow;
+    padding: 10px;
+    display: inline-block;
+    /*color: rebeccapurple;
+    font-weight: bold;
+    font-family: cursive;*/
+    text-align: center;
+    width: 100%;
+    border: 5px solid gray;
+}

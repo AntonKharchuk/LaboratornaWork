@@ -1,0 +1,64 @@
+﻿@model List<Listing>
+
+@{
+    ViewData["Title"] = "Search results";
+}
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #fff;
+    }
+</style>
+
+<div style="width: 50%;">
+    <h1 class="brown-rectangle">Search results</h1>
+
+    <img src="~/img/Fence.jpg" alt="Fence Image" />
+</div>
+
+<p class="mt-3">@Model.Count record(s) found.</p>
+
+<table class="mt-3">
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Price</th>
+            <th>Bathrooms/Bedrooms</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <form asp-action="SearchById" class="link" method="post">
+                        <input hidden type="text" id="id" name="id" value="@item.ListingID"/>
+                        <button type="submit" class="btn-link btn">@item.ListingID</button>
+                    </form>
+                    @* <a class="link" asp-area="" asp-controller="Home" asp-action="SearchById" id="@item.ListingID">@item.ListingID</a> *@
+                </td>
+
+                <td>@item.HousePrice @item.Currency</td>
+                <td>@item.Bathrooms/@item.Bedrooms</td>
+            </tr>
+        }
+    </tbody>
+</table>

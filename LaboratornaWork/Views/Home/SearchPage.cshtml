@@ -1,0 +1,70 @@
+﻿@page
+@model SearchParameters
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Form</title>
+</head>
+<body>
+    <div style="width: 50%;">
+        <h1 class="brown-rectangle">Search Form</h1>
+
+        <img src="~/img/Fence.jpg" alt="Fence Image" />
+    </div>
+
+    <form asp-action="SearchByParameters" method="post" class="mt-3">
+        <label for="minPrice" class="mt-3">Minimum price:</label>
+        <select name="minPrice" id="minPrice">
+            <option value="0">$0</option>
+            <option value="100000">$100,000</option>
+            <option value="500000">$500,000</option>
+            <option value="1000000">$1,000,000</option>
+            <option value="5000000">$5,000,000</option>
+        </select><br>
+
+        <label for="maxPrice" class="mt-3">Maximum price:</label>
+        <select name="maxPrice" id="maxPrice">
+            <option value="100000">$100,000</option>
+            <option value="500000">$500,000</option>
+            <option value="1000000">$1,000,000</option>
+            <option value="5000000">$5,000,000</option>
+            <option value="10000000" selected>$10,000,000</option>
+        </select><br>
+
+        <label for="numBathrooms" class="mt-3">Min bathrooms:</label>
+        <select name="numBathrooms" id="numBathrooms">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select><br>
+
+        <label for="numBedrooms" class="mt-3">Min bedrooms:</label>
+        <select name="numBedrooms" id="numBedrooms">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select><br>
+
+        <label for="district" class="mt-3">District:</label>
+        <select name="district" id="district">
+            <option value="district1">District 1</option>
+            <option value="district2">District 2</option>
+        </select><br>
+
+        <label for="sortBy" class="mt-3">Sort by:</label>
+        <select name="sortBy" id="sortBy">
+            <option value="priceLowToHigh">Price Low to High</option>
+            <option value="priceHighToLow">Price High to Low</option>
+            <option value="index">Index</option>
+            
+        </select><br>
+
+        <input type="submit" value="Search" class="mt-3">
+    </form>
+</body>
+</html>
